@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>ADMIN</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>userLogin.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file></welcome-file>
+  </welcome-file-list>
+  <filter>
+  	<filter-name>AuthAuthrizFilter</filter-name>
+  	<filter-class>com.vcs.admin.common.filter.AuthAuthrizFilter</filter-class>
+  </filter>
+  <filter>
+  	<filter-name>VerifyFilter</filter-name>
+  	<filter-class>com.vcs.admin.common.filter.VerifyFilter</filter-class>
+  </filter>
+  <servlet>
+  	<servlet-name>PreController</servlet-name>
+  	<servlet-class>com.vcs.admin.common.pre.controller.PreController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UserController</servlet-name>
+  	<servlet-class>com.vcs.admin.user.controller.UserController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RoleController</servlet-name>
+  	<servlet-class>com.vcs.admin.role.controller.RoleController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PermissionController</servlet-name>
+  	<servlet-class>com.vcs.admin.permission.controller.PermissionController</servlet-class>
+  </servlet>
+  <filter-mapping>
+  	<filter-name>AuthAuthrizFilter</filter-name>
+  	<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>VerifyFilter</filter-name>
+  	<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <servlet-mapping>
+  	<servlet-name>PreController</servlet-name>
+  	<url-pattern>/PreController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserController</servlet-name>
+  	<url-pattern>/UserController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RoleController</servlet-name>
+  	<url-pattern>/RoleController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PermissionController</servlet-name>
+  	<url-pattern>/PermissionController</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+</web-app>
